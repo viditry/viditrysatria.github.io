@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>R. Vidi Trysatria - Resume</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: white;
+            padding: 20px;
+        }
+
+        .resume-container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+        }
+
+        .header {
+            text-align: center;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            color: #2d3748;
+            margin-bottom: 10px;
+        }
+
+        .header .title {
+            font-size: 1.3em;
+            color: #667eea;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            font-size: 0.95em;
+            color: #555;
+        }
+
+        .contact-info a {
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        h2 {
+            color: #2d3748;
+            font-size: 1.5em;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 8px;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+
+        h3 {
+            color: #667eea;
+            font-size: 1.2em;
+            margin-top: 15px;
+            margin-bottom: 8px;
+        }
+
+        .section {
+            margin-bottom: 25px;
+        }
+
+        .summary {
+            font-size: 1em;
+            line-height: 1.8;
+            color: #555;
+            text-align: justify;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .skill-category h4 {
+            color: #2d3748;
+            font-size: 1.05em;
+            margin-bottom: 8px;
+        }
+
+        .skill-category ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .skill-category li {
+            padding: 3px 0;
+            color: #555;
+            font-size: 0.95em;
+        }
+
+        .skill-category li::before {
+            content: "▪ ";
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        .job {
+            margin-bottom: 20px;
+            page-break-inside: avoid;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 5px;
+        }
+
+        .job-title {
+            font-weight: 600;
+            color: #2d3748;
+            font-size: 1.1em;
+        }
+
+        .job-duration {
+            color: #666;
+            font-size: 0.9em;
+            font-style: italic;
+        }
+
+        .job-location {
+            color: #777;
+            font-size: 0.9em;
+            margin-bottom: 8px;
+        }
+
+        .job ul {
+            margin-left: 20px;
+            margin-top: 8px;
+        }
+
+        .job li {
+            margin-bottom: 5px;
+            color: #555;
+            font-size: 0.95em;
+        }
+
+        .education {
+            margin-top: 10px;
+        }
+
+        .degree {
+            font-weight: 600;
+            color: #2d3748;
+            font-size: 1.05em;
+        }
+
+        .university {
+            color: #667eea;
+            font-size: 1em;
+            margin-bottom: 5px;
+        }
+
+        .year {
+            color: #666;
+            font-style: italic;
+            font-size: 0.9em;
+        }
+
+        .tech-tags {
+            margin-top: 8px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .tech-tag {
+            background: #e6e9f5;
+            color: #667eea;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 0.85em;
+            font-weight: 500;
+        }
+
+        .no-print {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .print-btn {
+            background: #667eea;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .print-btn:hover {
+            background: #5568d3;
+        }
+
+        @media print {
+            body {
+                padding: 0;
+            }
+
+            .resume-container {
+                padding: 20px;
+            }
+
+            .no-print {
+                display: none;
+            }
+
+            h2 {
+                page-break-after: avoid;
+            }
+
+            .job {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="no-print">
+        <button class="print-btn" onclick="window.print()">📄 Save as PDF / Print</button>
+    </div>
+
+    <div class="resume-container">
+        <!-- Header -->
+        <div class="header">
+            <h1>R. Vidi Trysatria</h1>
+            <div class="title">Full Stack Software Engineer | FinTech Specialist</div>
+            <div class="contact-info">
+                <span>📍 Bandung, West Java, Indonesia</span>
+                <span>📧 <a href="mailto:viditrysatria@gmail.com">viditrysatria@gmail.com</a></span>
+                <span>💼 Currently @ BYD</span>
+            </div>
+        </div>
+
+        <!-- Professional Summary -->
+        <div class="section">
+            <h2>Professional Summary</h2>
+            <div class="summary">
+                Passionate Full Stack Software Engineer with 6+ years of professional experience building scalable,
+                enterprise-level applications in the FinTech sector. Expertise spans the entire development stack, from
+                crafting intuitive user interfaces with React and Angular to architecting robust backend systems using
+                Java Spring Boot and Node.js. Deep knowledge in financial trading systems, having successfully
+                integrated market access platforms with Bloomberg/Itivity, developed e-statement portfolios, and created
+                custom trading solutions. Notable work includes building a TradingView integration using Webpack module
+                federation for FIMA platform, enabling advanced charting capabilities to be seamlessly embedded into any
+                new platform.
+            </div>
+        </div>
+
+        <!-- Core Competencies -->
+        <div class="section">
+            <h2>Core Competencies</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h4>Backend Development</h4>
+                    <ul>
+                        <li>Java & Spring Boot</li>
+                        <li>Node.js & Express.js</li>
+                        <li>Microservices Architecture</li>
+                        <li>RESTful API Design</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h4>Frontend Development</h4>
+                    <ul>
+                        <li>React & Angular</li>
+                        <li>JavaScript/TypeScript</li>
+                        <li>Webpack & Module Federation</li>
+                        <li>HTML5 & CSS3</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h4>FinTech & Trading</h4>
+                    <ul>
+                        <li>FIX Protocol Integration</li>
+                        <li>TradingView Integration</li>
+                        <li>Bloomberg/Itivity APIs</li>
+                        <li>Financial Data Processing</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h4>DevOps & Cloud</h4>
+                    <ul>
+                        <li>Docker & Containerization</li>
+                        <li>Google Cloud Platform (GCP)</li>
+                        <li>CI/CD Pipelines</li>
+                        <li>PostgreSQL & Oracle DB</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Professional Experience -->
+        <div class="section">
+            <h2>Professional Experience</h2>
+
+            <div class="job">
+                <div class="job-header">
+                    <div class="job-title">Team Lead - Software Engineering - BYD</div>
+                    <div class="job-duration">March 2025 - Present</div>
+                </div>
+                <div class="job-location">Indonesia</div>
+                <ul>
+                    <li>Leading development team building a critical warehouse management system for factory operations
+                        and production logistics</li>
+                    <li>Architected and deployed enterprise Java applications to Linux production environments</li>
+                    <li>Implemented comprehensive ELK Stack (Elasticsearch, Logstash, Filebeat) for centralized log
+                        monitoring and real-time application health tracking</li>
+                    <li>Configured Nginx web servers on Linux for load balancing and reverse proxy capabilities</li>
+                    <li>Established DevOps best practices improving deployment processes and system reliability</li>
+                </ul>
+                <div class="tech-tags">
+                    <span class="tech-tag">Java</span>
+                    <span class="tech-tag">Linux</span>
+                    <span class="tech-tag">Elasticsearch</span>
+                    <span class="tech-tag">Logstash</span>
+                    <span class="tech-tag">Filebeat</span>
+                    <span class="tech-tag">Nginx</span>
+                    <span class="tech-tag">DevOps</span>
+                </div>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <div class="job-title">Software Developer - PT Mirae Asset Sekuritas Indonesia</div>
+                    <div class="job-duration">Aug 2021 - Mar 2025 (3 yrs 8 mos)</div>
+                </div>
+                <div class="job-location">Jakarta Selatan, Jakarta Raya, Indonesia</div>
+                <ul>
+                    <li>Led development of multiple mission-critical financial platforms serving thousands of users</li>
+                    <li>Built TradingView integration using Webpack module federation, reducing integration time by 70%
+                        for new platforms</li>
+                    <li>Implemented FIX protocol integration with Bloomberg/Itivity for real-time market data access
+                    </li>
+                    <li>Architected microservices infrastructure reducing deployment time by 60%</li>
+                    <li>Optimized database queries improving application performance by 40%</li>
+                </ul>
+                <div class="tech-tags">
+                    <span class="tech-tag">Java Spring</span>
+                    <span class="tech-tag">React</span>
+                    <span class="tech-tag">Angular</span>
+                    <span class="tech-tag">Webpack</span>
+                    <span class="tech-tag">FIX Protocol</span>
+                    <span class="tech-tag">Docker</span>
+                    <span class="tech-tag">GCP</span>
+                    <span class="tech-tag">PostgreSQL</span>
+                    <span class="tech-tag">Oracle</span>
+                </div>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <div class="job-title">Java Software Engineer - PT. Sigma Cipta Caraka (Telkomsigma)</div>
+                    <div class="job-duration">Jan 2020 - Sep 2021 (1 yr 9 mos)</div>
+                </div>
+                <div class="job-location">Indonesia</div>
+                <ul>
+                    <li>Developed enterprise applications for government and insurance sectors</li>
+                    <li>Implemented modern microservices architecture replacing legacy monolithic systems</li>
+                    <li>Improved application response time by 50% through code optimization</li>
+                    <li>Built comprehensive credit analysis system for Askrindo, reducing analysis time by 65%</li>
+                </ul>
+                <div class="tech-tags">
+                    <span class="tech-tag">Java Spring</span>
+                    <span class="tech-tag">Angular</span>
+                    <span class="tech-tag">Microservices</span>
+                    <span class="tech-tag">PostgreSQL</span>
+                </div>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <div class="job-title">Java Developer (Freelance) - Self Employed</div>
+                    <div class="job-duration">Apr 2019 - Aug 2019 (5 mos)</div>
+                </div>
+                <div class="job-location">Greater Jakarta Area, Indonesia</div>
+                <ul>
+                    <li>Developed enterprise web portal for Astra Honda Motor, Indonesia's largest motorcycle
+                        manufacturer</li>
+                    <li>Implemented dealer management, inventory tracking, and sales reporting features</li>
+                    <li>Streamlined dealer operations for 1000+ locations nationwide</li>
+                </ul>
+                <div class="tech-tags">
+                    <span class="tech-tag">Java Spring</span>
+                    <span class="tech-tag">Oracle SQL</span>
+                    <span class="tech-tag">JSP</span>
+                </div>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <div class="job-title">Mobile Developer - wision.id</div>
+                    <div class="job-duration">Jan 2018 - Nov 2018 (11 mos)</div>
+                </div>
+                <div class="job-location">Bandung Area, West Java, Indonesia</div>
+                <ul>
+                    <li>Developed mobile applications for startup projects with modern UI/UX design patterns</li>
+                    <li>Implemented RESTful API integration and optimized app performance</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Key Projects -->
+        <div class="section">
+            <h2>Key Projects</h2>
+
+            <div class="job">
+                <h3>FIMA TradingView Integration</h3>
+                <ul>
+                    <li>Built custom TradingView integration using Webpack Module Federation for seamless cross-platform
+                        deployment</li>
+                    <li>Created reusable widgets for real-time market data visualization</li>
+                    <li>Reduced integration time for new platforms by 70%, enabled real-time charting for 5000+ active
+                        traders</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <h3>SAGE CLUB Back-Office System</h3>
+                <ul>
+                    <li>Comprehensive e-statement portfolio management system for premium members</li>
+                    <li>Automated reporting and real-time data synchronization</li>
+                    <li>Streamlined operations for 10,000+ premium accounts, reduced manual processing by 80%</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <h3>Mirae Direct Market Access (DMA)</h3>
+                <ul>
+                    <li>Real-time market access integration with Bloomberg and Itivity using FIX protocol</li>
+                    <li>Enabled direct market access for institutional clients</li>
+                    <li>Processed 100,000+ transactions daily</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Education -->
+        <div class="section">
+            <h2>Education</h2>
+            <div class="education">
+                <div class="university">Institut Teknologi Sepuluh Nopember Surabaya (ITS)</div>
+                <div class="degree">Bachelor of Engineering - Ocean Engineering</div>
+                <div class="year">2012 - 2017</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Auto-print dialog on page load (optional)
+        // window.onload = function() { window.print(); }
+    </script>
+</body>
+
+</html>
